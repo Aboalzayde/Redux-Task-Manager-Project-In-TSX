@@ -1,0 +1,338 @@
+/* TaskList.css */
+
+/* Task List Container */
+.task-list {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* margin: 20px auto; */
+  max-width: 1200px;
+}
+
+.task-list h2 {
+  color: #333;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  font-size: 35px;
+}
+
+/* Filter and Sorting Controls */
+.filters,
+.sorting {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 25px;
+}
+
+.filters label,
+.sorting label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  margin: 0;
+}
+
+option {
+    padding: 8px;
+    font-size: 14px;
+    color: white;
+}
+
+#priority {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+.filters select,
+.sorting select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  /* background-color: white; */
+  width: auto;
+  margin: auto;
+  font-size: 14px;
+  min-width: 120px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filters select:focus,
+.sorting select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 1px rgba(85, 109, 134, 0.25);
+}
+
+.filters select:hover,
+.sorting select:hover {
+  border-color: #adb5bd;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  /* border-radius: 8px; */
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Table Header */
+thead th {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 15px 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Table Body */
+tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 14px;
+  color: #495057;
+  vertical-align: top;
+}
+
+/* Table Row Hover Effect */
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+
+tbody tr:nth-child(even):hover {
+  background-color: #f8f9fa;
+}
+
+/* Priority Cell Styling */
+tbody td:nth-child(3) {
+  font-weight: 600;
+}
+
+/* Priority Colors */
+tbody tr td:nth-child(3) {
+  position: relative;
+}
+
+tbody tr:has(td:nth-child(3):contains("High")) td:nth-child(3) {
+  color: #dc3545;
+}
+
+tbody tr:has(td:nth-child(3):contains("Medium")) td:nth-child(3) {
+  color: #fd7e14;
+}
+
+tbody tr:has(td:nth-child(3):contains("Low")) td:nth-child(3) {
+  color: #28a745;
+}
+
+/* Action Buttons */
+tbody td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+
+tbody td button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 3px;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Edit Button */
+tbody td button:first-child {
+  background: #28a745;
+  color: white;
+}
+
+tbody td button:first-child:hover {
+  background: #1e7e34;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+/* Delete Button */
+tbody td button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+tbody td button:last-child:hover {
+  background: #c82333;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+/* Active Button State */
+tbody td button:active {
+  transform: translateY(0);
+}
+
+/* Empty State */
+tbody tr td[colspan="5"] {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Due Date Highlighting */
+tbody td:nth-child(2) {
+  position: relative;
+}
+
+/* Overdue dates (you might need JavaScript to add this class) */
+.overdue {
+  color: #dc3545 !important;
+  font-weight: 600;
+}
+
+.due-soon {
+  color: #fd7e14 !important;
+  font-weight: 600;
+}
+
+/* Description Column */
+tbody td:nth-child(4) {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+tbody td:nth-child(4):hover {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-list {
+    margin: 10px;
+    padding: 15px;
+  }
+  
+  .filters,
+  .sorting {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .filters select,
+  .sorting select {
+    min-width: auto;
+  }
+  
+  table {
+    font-size: 12px;
+  }
+  
+  thead th,
+  tbody td {
+    padding: 8px 6px;
+  }
+  
+  tbody td:nth-child(4) {
+    max-width: 120px;
+  }
+  
+  tbody td button {
+    padding: 4px 8px;
+    font-size: 11px;
+    margin: 0 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Stack table on very small screens */
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  tbody tr {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background: white;
+  }
+  
+  tbody td {
+    border: none;
+    position: relative;
+    padding: 8px 8px 8px 50%;
+    text-align: left;
+  }
+  
+  tbody td:before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  tbody td:last-child {
+    text-align: left;
+  }
+}
+
+/* Animation for table appearance */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.task-list {
+  animation: slideIn 0.4s ease-out;
+}
