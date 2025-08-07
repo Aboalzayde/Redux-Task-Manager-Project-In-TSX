@@ -1,12 +1,10 @@
-// types/types.ts
-
 export interface Task {
   id: number;
   name: string;
   dueDate: string;
   priority: 'Low' | 'Medium' | 'High';
   description: string;
-  completed: boolean; // ✅ Kept for best practice - represents task completion state
+  completed: boolean;
 }
 
 export interface TaskContextType {

@@ -10,13 +10,16 @@
   max-width: 1200px;
 }
 
-.task-list h2 {
+.task-list h2, .No-Tasks {
   color: #333;
   text-align: center;
   align-items: center;
   justify-content: center;
   padding-bottom: 20px;
   font-size: 35px;
+}
+h3, p, strong {
+  color: black;
 }
 
 /* Filter and Sorting Controls */

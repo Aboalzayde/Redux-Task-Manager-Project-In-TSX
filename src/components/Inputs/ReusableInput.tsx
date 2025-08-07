@@ -18,7 +18,6 @@ const ReusableInput: React.FC<ReusableInputProps> = ({
 }) => {
   const showError = touched && error;
 
-  // ✅ Simple inline autocomplete logic
 
   return (
     <div className={`form-group ${showError ? 'has-error' : ''}`}>
